@@ -32,7 +32,6 @@ for _, server in pairs(servers) do
   }
 
   if server == "clangd" then
-    print("is this working?")
     opts.capabilities.offsetEncoding = "utf-8"
   end
 
