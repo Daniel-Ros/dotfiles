@@ -37,3 +37,15 @@ local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
 end
+
+local vert = Terminal:new({ direction = "vertical" , hidden = true })
+
+function _VERT_TOGGLE()
+	vert:toggle()
+end
+
+local hor = Terminal:new({ direction = "horizontal" , hidden = true })
+
+function _HOR_TOGGLE()
+	hor:toggle()
+end

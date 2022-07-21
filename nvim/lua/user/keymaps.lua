@@ -23,7 +23,7 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Duplicate a line
-keymap("n", "<C-d>","yyp", opts)
+keymap("n", "<C-d>", "yyp", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -74,13 +74,13 @@ keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 -- Plugins --
 
 -- Iluminate
-keymap("n","<C-n>","<cmd>lua require('illuminate').next_reference{wrap=true}<CR>")
-keymap("i","<C-n>","<cmd>lua require('illuminate').next_reference{wrap=true}<CR>")
-keymap("n","<C-p>","<cmd>lua require('illuminate').next_reference{reverse=true,wrap=true}<CR>")
-keymap("i","<C-p>","<cmd>lua require('illuminate').next_reference{reverse=true,wrap=true}<CR>")
+keymap("n", "<C-n>", "<cmd>lua require('illuminate').next_reference{wrap=true}<CR>")
+keymap("i", "<C-n>", "<cmd>lua require('illuminate').next_reference{wrap=true}<CR>")
+keymap("n", "<C-p>", "<cmd>lua require('illuminate').next_reference{reverse=true,wrap=true}<CR>")
+keymap("i", "<C-p>", "<cmd>lua require('illuminate').next_reference{reverse=true,wrap=true}<CR>")
 
 -- Bbye
-keymap("n","<leader>c",":Bdelete<CR>")
+keymap("n", "<leader>c", ":Bdelete<CR>")
 
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
@@ -108,3 +108,7 @@ keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
+
+-- cppdbg
+keymap("n", "<F4>", "<cmd>lua require'cppdbg'.build()<cr>", opts)
+keymap("n", "<F5>", "<cmd>lua require'cppdbg'.debug()<cr>", opts)

@@ -58,6 +58,7 @@ return packer.startup(function(use)
   use { "kyazdani42/nvim-tree.lua", commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243" }
   use { "numToStr/Comment.nvim", commit = "2c26a00f32b190390b664e56e32fd5347613b9e2" }
   use { "nvim-lualine/lualine.nvim", commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" }
+
   -- snippets
   use { "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" } --snippet engine
   use { "rafamadriz/friendly-snippets", commit = "d27a83a363e61009278b6598703a763ce9c8e617" } -- a bunch of snippets to use
@@ -90,7 +91,13 @@ return packer.startup(function(use)
 
   -- colorschemes
   use "ellisonleao/gruvbox.nvim"
-  
+
+  -- DAP (Debugging)
+  use  {"mfussenegger/nvim-dap"} 
+  use { "rcarriga/nvim-dap-ui"}
+  use {"ravenxrz/DAPInstall.nvim"}
+
+  use "Daniel-Ros/vimbuild"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

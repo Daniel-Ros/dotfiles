@@ -114,9 +114,30 @@ local mappings = {
     u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
 
-  g = {
+  t = {
     name = "Git",
     g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+    v = { "<cmd>lua _VERT_TOGGLE()<CR>", "Vertical" },
+    h = { "<cmd>lua _HOR_TOGGLE()<CR>", "Horizontal" },
+  },
+
+  d = {
+    name = "debugger",
+    b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "toggle `breakpoint"},
+    c = { "<cmd>lua require'dap'.continue()<cr>", "continue"},
+    i = { "<cmd>lua require'dap'.step_into()<cr>", "step into"},
+    o = { "<cmd>lua require'dap'.step_over()<cr>", "step over"},
+    O = { "<cmd>lua require'dap'.step_out()<cr>", "step out"},
+    r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "repl toggle"},
+    l = { "<cmd>lua require'dap'.run_last()<cr>", "run last"},
+    u = { "<cmd>lua require'dapui'.toggle()<cr>", "toggle"},
+    t = { "<cmd>lua require'dap'.terminate()<cr>", "terminate"},
+  },
+
+
+
+
+    -- g= {
     -- j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     -- k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
     -- l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -135,7 +156,6 @@ local mappings = {
     --   "<cmd>Gitsigns diffthis HEAD<cr>",
     --   "Diff",
     -- },
-  },
 
   l = {
     name = "LSP",

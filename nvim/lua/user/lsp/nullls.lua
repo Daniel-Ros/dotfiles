@@ -10,6 +10,7 @@ nullls.setup({
   sources = {
     formatter.black,
     formatter.clang_format,
+    formatter.stylua,
   },
 })
 
