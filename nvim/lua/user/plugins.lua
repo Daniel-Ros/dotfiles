@@ -81,7 +81,7 @@ return packer.startup(function(use)
   use { "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" }
 
   -- TreeSitter
-  use { "nvim-treesitter/nvim-treesitter", commit = "518e27589c0463af15463c9d675c65e464efc2fe", run=":TSUpdate"}
+  use { "nvim-treesitter/nvim-treesitter", run=":TSUpdate"}
 
   -- BufferLine
   use { "akinsho/bufferline.nvim" ,tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}

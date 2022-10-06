@@ -27,7 +27,7 @@
 import os
 import shlex
 from libqtile import bar, layout, widget, hook, qtile
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, EzKey, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile.log_utils import logger
@@ -111,7 +111,10 @@ keys = [
     ),
     Key([mod], "Right", lazy.function(window_to_next_screen)),
     Key([mod], "Left", lazy.function(window_to_previous_screen)),
-]
+
+    # TODO : restore the prev functionallity
+    Key(["mod1"], "Shift_L", lazy.widget["keyboardlayout"].next_keyboard()),
+    ]
 
 
 groups_names = {1: "DEV", 2: "WWW", 3: "EXE", 4: "MEDIA"}
@@ -266,12 +269,12 @@ def init_widgets_list(secondary=False):
         widget.TextBox(
             text="", foreground=colors[8], background=colors[7], padding=0, fontsize=20
         ),
-        widget.GenPollText(
+        widget.KeyboardLayout(
             foreground=colors[1],
             background=colors[8],
-            padding=5,
-            func=get_keyboard_layout,
-            update_interval=0.5,
+            fontsize=10,
+            configured_keyboards=["us", "il"],
+            mouse_callback={'Button1': lambda : lazy.widget["keyboardlayout"].next_keyboard()},
         ),
         widget.TextBox(
             text="", foreground=colors[7], background=colors[8], padding=0, fontsize=20
