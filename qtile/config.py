@@ -113,7 +113,7 @@ keys = [
     Key([mod], "Left", lazy.function(window_to_previous_screen)),
 
     # TODO : restore the prev functionallity
-    Key(["mod1"], "Shift_L", lazy.widget["keyboardlayout"].next_keyboard()),
+    # Key(["mod1"], "Shift_L", lazy.widget["keyboardlayout"].next_keyboard()),
     ]
 
 
@@ -269,13 +269,20 @@ def init_widgets_list(secondary=False):
         widget.TextBox(
             text="", foreground=colors[8], background=colors[7], padding=0, fontsize=20
         ),
-        widget.KeyboardLayout(
+        widget.GenPollText(
             foreground=colors[1],
             background=colors[8],
-            fontsize=10,
-            configured_keyboards=["us", "il"],
-            mouse_callback={'Button1': lambda : lazy.widget["keyboardlayout"].next_keyboard()},
+            padding=5,
+            func=get_keyboard_layout,
+            update_interval=0.5,
         ),
+        # widget.KeyboardLayout(
+        #     foreground=colors[1],
+        #     background=colors[8],
+        #     fontsize=10,
+        #     configured_keyboards=["us", "il"],
+        #     mouse_callback={'Button1': lambda : lazy.widget["keyboardlayout"].next_keyboard()},
+        # ),
         widget.TextBox(
             text="", foreground=colors[7], background=colors[8], padding=0, fontsize=20
         ),
@@ -395,7 +402,7 @@ def run(cmdline):
 def auto_start():
     home = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.run([home])
-    runone("kdeconnect-indicator")
+    # runone("kdeconnect-indicator")
     runone("flatpak run io.github.mimbrero.WhatsAppDesktop")
 
 
